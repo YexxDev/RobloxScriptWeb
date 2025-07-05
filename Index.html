@@ -1,98 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>YexScriptHub - Login</title>
-  <script type="module">
-    // Firebase v9+ Modular SDK
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyDDg8iHbwQTljnDWbEstbAeeIo1ndY4WAc",
-      authDomain: "robloxscript-872f6.firebaseapp.com",
-      projectId: "robloxscript-872f6",
-      storageBucket: "robloxscript-872f6.appspot.com",
-      messagingSenderId: "236880401929",
-      appId: "1:236880401929:web:22af90a5a9e8cdade58ad8",
-      measurementId: "G-XBRSC3J0R6"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    window.login = function () {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      const status = document.getElementById("status");
-
-      signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          status.innerText = "✅ Login successful!";
-          status.style.color = "green";
-          window.location.href = "store.html"; // go to script store
-        })
-        .catch((error) => {
-          status.innerText = "❌ " + error.message;
-          status.style.color = "red";
-        });
-    };
-  </script>
-
+  <meta charset="UTF-8" />
+  <title>YexScriptHub</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
       margin: 0;
+      padding: 0;
     }
 
-    .box {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    header {
+      background-color: #111;
+      color: #fff;
+      padding: 20px;
       text-align: center;
-      width: 90%;
-      max-width: 400px;
     }
 
-    input {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 16px;
+    h1 {
+      margin: 0;
+      font-size: 2em;
     }
 
-    button {
-      padding: 12px;
-      width: 95%;
-      background: #007bff;
-      border: none;
-      color: white;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
+    .container {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
     }
 
-    #status {
+    .script {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .script h3 {
+      margin-top: 0;
+      color: #222;
+    }
+
+    .script p {
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
       margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
 <body>
 
-  <div class="box">
-    <h2>Login to YexScriptHub</h2>
-    <input type="email" id="email" placeholder="Email"><br>
-    <input type="password" id="password" placeholder="Password"><br>
-    <button onclick="login()">Login</button>
-    <p id="status"></p>
+  <header>
+    <h1>YexScriptHub</h1>
+    <p>Browse the best Roblox scripts by YexelEsp</p>
+  </header>
+
+  <div class="container">
+
+    <!-- 🟢 SCRIPT ENTRY -->
+    <div class="script">
+      <h3>🌀 Blox Fruits - Auto Farm</h3>
+      <p>Smart auto farm with quest system, weapon selector, and anti-cheat bypass.</p>
+      <a href="https://pastebin.com/raw/YOUR_AUTOFARM_SCRIPT" target="_blank" class="btn">📜 View Script</a>
+    </div>
+
+    <div class="script">
+      <h3>💸 Pet Simulator X - Dupe Script</h3>
+      <p>Instant pet dupe method. Safe and tested. Works on latest version.</p>
+      <a href="https://pastebin.com/raw/YOUR_PSX_SCRIPT" target="_blank" class="btn">📜 View Script</a>
+    </div>
+
+    <!-- 🔽 Add More Scripts Below This -->
+    <!-- Copy the block and replace the name/link/description -->
+
   </div>
+
+  <footer>
+    Made by YexelEsp | © 2025
+  </footer>
 
 </body>
 </html>
